@@ -5,7 +5,7 @@ const baseController = {};
  * Build the home view
  * ************************ */
 baseController.buildHome = async function (req, res) {
-  const nav = await utilities.getNav(); // ← and here
+  const nav = await utilities.getNav(); 
   // req.flash("notice", "This is a flash message.");
   res.render("index", { title: "Home", nav }); 
 };
