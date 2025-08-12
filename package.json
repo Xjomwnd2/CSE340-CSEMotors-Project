@@ -1,5 +1,5 @@
 {
-  "name": "cse340-csemotors",
+  "name": "CSE340-CSEMotors-Project",
   "version": "1.0.0",
   "description": "CSE Motors - Automotive Dealership Management System",
   "main": "server.js",
