@@ -1,15 +1,14 @@
 /* styles.css */
 /* Basic page reset and style setup */
-h1 {
-  color: #007BFF;
-}
-
 /* CSE Motors Main Stylesheet */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1 {
+  color: #007BFF;
 }
 
 body {
