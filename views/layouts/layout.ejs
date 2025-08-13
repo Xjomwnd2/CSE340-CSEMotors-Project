@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head', { title: typeof title !== 'undefined' ? title : 'CSE Motors' }) %>
-  <body class="site">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <%- include('partials/header', { loggedin, account }) %>
-    <%- include('partials/nav', { nav }) %>
+<%- include('../partials/head') %>
 
-    <main id="main" class="container">
-      <%- include('partials/flash', { messages }) %>
+<body>
+  <div id="wrapper">
+    <%- include('../partials/header') %>
+    <%- include('../partials/navigation') %>
+    
+    <main>
+      <% if (messages.notice) { %>
+        <p class="notice"><%- messages.notice %></p>
+      <% } %>
+      <% if (messages.error) { %>
+        <p class="error"><%- messages.error %></p>
+      <% } %>
+      
       <%- body %>
     </main>
-
-    <%- include('partials/footer') %>
-    <script src="/js/main.js" defer></script>
-  </body>
+    
+    <%- include('../partials/footer') %>
+  </div>
+</body>
 </html>
