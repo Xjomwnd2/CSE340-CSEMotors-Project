@@ -1,0 +1,30 @@
+<% layout('layout') -%>
+<section class="stack gap-xl">
+  <header class="stack gap-sm">
+    <h1><%= title || (classificationData?.classification_name + ' Vehicles') %></h1>
+    <% if (classificationData) { %>
+      <p class="muted">Browse <strong><%= classificationData.classification_name %></strong> inventory.</p>
+    <% } %>
+  </header>
+
+  <% if (vehicles && vehicles.length) { %>
+    <ul class="grid cards">
+      <% vehicles.forEach(v => { %>
+        <li class="card">
+          <a class="card-link" href="/inv/detail/<%= v.inv_id %>" aria-label="View <%= v.inv_make %> <%= v.inv_model %>">
+            <div class="card-media">
+              <img loading="lazy" src="<%= v.inv_thumbnail %>" alt="<%= v.inv_make %> <%= v.inv_model %>" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title"><%= v.inv_year %> <%= v.inv_make %> <%= v.inv_model %></h2>
+              <p class="price">$<%= Number(v.inv_price).toLocaleString() %></p>
+              <p class="muted"><%= v.inv_miles.toLocaleString() %> miles • <%= v.inv_color %></p>
+            </div>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No vehicles found in this classification.</p>
+  <% } %>
+</section>

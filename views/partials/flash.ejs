@@ -1,0 +1,16 @@
+<% if (messages && (messages.error || messages.success || messages.info || messages.warning)) { %>
+  <div class="flash-wrap" role="status" aria-live="polite">
+    <% (messages.error || []).forEach(msg => { %>
+      <div class="flash flash-error"><span>❌</span> <%= msg %></div>
+    <% }) %>
+    <% (messages.success || []).forEach(msg => { %>
+      <div class="flash flash-success"><span>✅</span> <%= msg %></div>
+    <% }) %>
+    <% (messages.info || []).forEach(msg => { %>
+      <div class="flash flash-info"><span>ℹ️</span> <%= msg %></div>
+    <% }) %>
+    <% (messages.warning || []).forEach(msg => { %>
+      <div class="flash flash-warning"><span>⚠️</span> <%= msg %></div>
+    <% }) %>
+  </div>
+<% } %>

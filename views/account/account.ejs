@@ -1,0 +1,21 @@
+<% layout('layout') -%>
+<section class="stack gap-lg">
+  <h1>Your Account</h1>
+  <article class="card">
+    <div class="card-body">
+      <h2>Profile</h2>
+      <p><strong>Name:</strong> <%= account.account_firstname %> <%= account.account_lastname %></p>
+      <p><strong>Email:</strong> <%= account.account_email %></p>
+      <p><strong>Role:</strong> <%= account.account_type %></p>
+    </div>
+  </article>
+
+  <% if (account.account_type === 'Admin' || account.account_type === 'Employee') { %>
+    <article class="card">
+      <div class="card-body">
+        <h2>Inventory Management</h2>
+        <p class="muted">Access admin tools to manage classifications and vehicles.</p>
+        <a href="/inv" class="btn btn-primary">Open Inventory Tools</a>
+      </div>
+    </article>
+  <% } %>

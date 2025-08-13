@@ -21,6 +21,11 @@ const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 
 /* ***********************
+ * dotenv
+ * ************************/
+require("dotenv").config();
+
+/* ***********************
  * Middleware
  * ************************/
 app.use(session({

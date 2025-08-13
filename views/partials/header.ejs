@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">CSE Motors</a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+      <span class="menu-icon" aria-hidden="true"></span>
+      Menu
+    </button>
+
+    <div class="account-actions">
+      <% if (loggedin && account) { %>
+        <a class="btn btn-ghost" href="/account">Hi, <%= account.account_firstname %></a>
+        <form action="/account/logout" method="post" class="inline">
+          <button class="btn btn-primary">Logout</button>
+        </form>
+      <% } else { %>
+        <a class="btn btn-primary" href="/account/login">Sign In</a>
+      <% } %>
+    </div>
+  </div>
+</header>
